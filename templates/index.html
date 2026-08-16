@@ -1,187 +1,226 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="es">
 
-{% block content %}
+<head>
 
-<header>
+    <meta charset="UTF-8">
 
-    <h1>Sistema de Gestión Académica</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <h2>
-        Proyecto creado para organizar procesos académicos mediante una página web
-    </h2>
+    <title>Sistema de Gestión Académica</title>
 
-    <h3>
-        Desarrollado por: JORDAN ARRIAGA
-    </h3>
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
-</header>
+    <!-- CSS del proyecto -->
+    <link rel="stylesheet" href="static/css/style.css">
 
+</head>
 
-<div class="container mt-4">
+<body>
 
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <!-- MENÚ PRINCIPAL -->
 
-        <strong>¡Bienvenido!</strong>
-        Sistema de Gestión Académica desarrollado con Bootstrap 5.
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
-        <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="alert">
-        </button>
+        <div class="container">
 
-    </div>
+            <a class="navbar-brand" href="index.html">
+                Sistema Académico
+            </a>
 
-</div>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
 
-<!-- INICIO -->
+                <span class="navbar-toggler-icon"></span>
 
-<section id="inicio" class="text-center">
+            </button>
 
-    <h2>Inicio</h2>
+            <div class="collapse navbar-collapse" id="menu">
 
-    <p>
-        Este sitio web fue desarrollado como práctica académica
-        utilizando HTML5, CSS3 y Bootstrap para construir una página
-        organizada, moderna y funcional.
-    </p>
+                <ul class="navbar-nav ms-auto">
 
-    <a href="#contacto" class="btn btn-success">
-        Contáctanos
-    </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Inicio
+                        </a>
+                    </li>
 
-</section>
+                    <li class="nav-item">
+                        <a class="nav-link" href="templates/productos.html">
+                            Productos
+                        </a>
+                    </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="templates/clientes.html">
+                            Clientes
+                        </a>
+                    </li>
 
-<!-- QUIÉNES SOMOS -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="templates/proveedores.html">
+                            Proveedores
+                        </a>
+                    </li>
 
-<section id="quienes">
+                    <li class="nav-item">
+                        <a class="nav-link" href="templates/facturacion.html">
+                            Facturación
+                        </a>
+                    </li>
 
-    <div class="row align-items-center">
+                </ul>
 
-        <div class="col-md-6">
-
-            <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
-                class="img-fluid"
-                alt="Equipo de trabajo">
+            </div>
 
         </div>
 
-        <div class="col-md-6">
+    </nav>
 
-            <h2>Quiénes Somos</h2>
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <h1>Sistema de Gestión Académica</h1>
+
+        <h2>
+            Proyecto creado para organizar procesos académicos
+            mediante una página web
+        </h2>
+
+        <h3>
+            Desarrollado por: JORDAN ARRIAGA
+        </h3>
+
+    </header>
+
+
+    <!-- BIENVENIDA -->
+
+    <div class="container mt-4">
+
+        <div
+            class="alert alert-success alert-dismissible fade show"
+            role="alert">
+
+            <strong>¡Bienvenido!</strong>
+
+            Sistema de Gestión Académica desarrollado con
+            Bootstrap 5.
+
+            <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert">
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+
+    <main class="container-lg">
+
+
+        <!-- INICIO -->
+
+        <section id="inicio" class="text-center">
+
+            <h2>Inicio</h2>
 
             <p>
-                Somos un proyecto enfocado en el desarrollo de
-                herramientas tecnológicas orientadas a mejorar la
-                gestión académica mediante soluciones digitales.
-                Este trabajo demuestra la aplicación práctica de
-                HTML5, CSS3 y Bootstrap utilizando estructuras
-                semánticas modernas.
+                Este sitio web fue desarrollado como práctica
+                académica utilizando HTML5, CSS3 y Bootstrap
+                para construir una página organizada, moderna
+                y funcional.
             </p>
 
-        </div>
+            <a href="#contacto" class="btn btn-success">
+                Contáctanos
+            </a>
 
-    </div>
-
-</section>
-
-
-<!-- SERVICIOS -->
-
-<section id="servicios">
-
-    <h2 class="text-center mb-4">
-        Servicios o Productos
-    </h2>
-
-    <div class="row" id="contenedorServicios">
-
-    </div>
-
-</section>
+        </section>
 
 
-<!-- REGISTRO DE ESTUDIANTES -->
+        <!-- QUIÉNES SOMOS -->
 
-<section id="registro" class="mt-5">
+        <section id="quienes">
 
-    <div class="card shadow">
+            <div class="row align-items-center">
 
-        <div class="card-header bg-success text-white">
+                <div class="col-md-6">
 
-            <h3>Registro de Estudiantes</h3>
+                    <img
+                        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+                        class="img-fluid"
+                        alt="Equipo de trabajo">
 
-        </div>
+                </div>
 
-        <div class="card-body">
+                <div class="col-md-6">
 
-            <form id="formulario">
+                    <h2>Quiénes Somos</h2>
 
-                <div class="row">
+                    <p>
+                        Somos un proyecto enfocado en el desarrollo
+                        de herramientas tecnológicas orientadas a
+                        mejorar la gestión académica mediante
+                        soluciones digitales.
 
-                    <!-- NOMBRE -->
+                        Este trabajo demuestra la aplicación práctica
+                        de HTML5, CSS3 y Bootstrap utilizando
+                        estructuras semánticas modernas.
+                    </p>
 
-                    <div class="col-md-4 mb-3">
+                </div>
 
-                        <label class="form-label">
-                            Nombre
-                        </label>
+            </div>
 
-                        <input
-                            type="text"
-                            id="nombre"
-                            class="form-control"
-                            placeholder="Ingrese el nombre">
-
-                        <div
-                            id="errorNombre"
-                            class="invalid-feedback">
-                        </div>
-
-                    </div>
+        </section>
 
 
-                    <!-- CARRERA -->
+        <!-- SERVICIOS -->
 
-                    <div class="col-md-4 mb-3">
+        <section id="servicios">
 
-                        <label class="form-label">
-                            Carrera
-                        </label>
+            <h2 class="text-center mb-4">
+                Servicios o Productos
+            </h2>
 
-                        <input
-                            type="text"
-                            id="carrera"
-                            class="form-control"
-                            placeholder="Ingrese la carrera">
+            <div class="row">
 
-                        <div
-                            id="errorCarrera"
-                            class="invalid-feedback">
-                        </div>
+                <div class="col-md-3 mb-3">
 
-                    </div>
+                    <div class="card shadow h-100">
 
+                        <div class="card-body text-center">
 
-                    <!-- SEMESTRE -->
+                            <h5 class="card-title">
+                                Productos
+                            </h5>
 
-                    <div class="col-md-4 mb-3">
+                            <p class="card-text">
+                                Administración de productos
+                                registrados en el sistema.
+                            </p>
 
-                        <label class="form-label">
-                            Semestre
-                        </label>
+                            <a
+                                href="templates/productos.html"
+                                class="btn btn-primary">
 
-                        <input
-                            type="text"
-                            id="semestre"
-                            class="form-control"
-                            placeholder="Ingrese el semestre">
+                                Ver Productos
 
-                        <div
-                            id="errorSemestre"
-                            class="invalid-feedback">
+                            </a>
+
                         </div>
 
                     </div>
@@ -189,327 +228,520 @@
                 </div>
 
 
-                <!-- BOTONES -->
+                <div class="col-md-3 mb-3">
+
+                    <div class="card shadow h-100">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                Clientes
+                            </h5>
+
+                            <p class="card-text">
+                                Gestión y administración
+                                de clientes.
+                            </p>
+
+                            <a
+                                href="templates/clientes.html"
+                                class="btn btn-primary">
+
+                                Ver Clientes
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3 mb-3">
+
+                    <div class="card shadow h-100">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                Proveedores
+                            </h5>
+
+                            <p class="card-text">
+                                Administración de proveedores
+                                del sistema.
+                            </p>
+
+                            <a
+                                href="templates/proveedores.html"
+                                class="btn btn-primary">
+
+                                Ver Proveedores
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3 mb-3">
+
+                    <div class="card shadow h-100">
+
+                        <div class="card-body text-center">
+
+                            <h5 class="card-title">
+                                Facturación
+                            </h5>
+
+                            <p class="card-text">
+                                Gestión de facturas y
+                                registros de facturación.
+                            </p>
+
+                            <a
+                                href="templates/facturacion.html"
+                                class="btn btn-primary">
+
+                                Ver Facturación
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REGISTRO DE ESTUDIANTES -->
+
+        <section id="registro" class="mt-5">
+
+            <div class="card shadow">
+
+                <div class="card-header bg-success text-white">
+
+                    <h3>
+                        Registro de Estudiantes
+                    </h3>
+
+                </div>
+
+                <div class="card-body">
+
+                    <form id="formulario">
+
+                        <div class="row">
+
+                            <!-- NOMBRE -->
+
+                            <div class="col-md-4 mb-3">
+
+                                <label class="form-label">
+                                    Nombre
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="nombre"
+                                    class="form-control"
+                                    placeholder="Ingrese el nombre">
+
+                                <div
+                                    id="errorNombre"
+                                    class="invalid-feedback">
+                                </div>
+
+                            </div>
+
+
+                            <!-- CARRERA -->
+
+                            <div class="col-md-4 mb-3">
+
+                                <label class="form-label">
+                                    Carrera
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="carrera"
+                                    class="form-control"
+                                    placeholder="Ingrese la carrera">
+
+                                <div
+                                    id="errorCarrera"
+                                    class="invalid-feedback">
+                                </div>
+
+                            </div>
+
+
+                            <!-- SEMESTRE -->
+
+                            <div class="col-md-4 mb-3">
+
+                                <label class="form-label">
+                                    Semestre
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="semestre"
+                                    class="form-control"
+                                    placeholder="Ingrese el semestre">
+
+                                <div
+                                    id="errorSemestre"
+                                    class="invalid-feedback">
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-success">
+
+                            Registrar Estudiante
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#infoModal">
+
+                            Ver información
+
+                        </button>
+
+                    </form>
+
+
+                    <div
+                        id="mensaje"
+                        class="mt-3">
+                    </div>
+
+
+                    <hr>
+
+
+                    <h4>
+                        Lista de Estudiantes
+                    </h4>
+
+
+                    <div class="table-responsive">
+
+                        <table
+                            class="table table-striped table-hover table-bordered align-middle">
+
+                            <thead class="table-primary">
+
+                                <tr>
+
+                                    <th>#</th>
+                                    <th>Nombre</th>
+                                    <th>Carrera</th>
+                                    <th>Semestre</th>
+                                    <th>Acciones</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="lista">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+
+                    <!-- SPINNER -->
+
+                    <div
+                        id="spinner"
+                        class="text-center mt-4"
+                        style="display:none;">
+
+                        <div
+                            class="spinner-border text-primary"
+                            role="status">
+
+                            <span class="visually-hidden">
+                                Cargando...
+                            </span>
+
+                        </div>
+
+                        <p class="mt-2">
+                            Registrando estudiante...
+                        </p>
+
+                    </div>
+
+
+                    <!-- CONTADOR -->
+
+                    <h5 class="mt-4">
+
+                        Total de estudiantes:
+                        <span id="contador">0</span>
+
+                    </h5>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- IMAGEN -->
+
+        <article>
+
+            <h2>
+                Imagen del Proyecto
+            </h2>
+
+            <img
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+                class="img-fluid"
+                alt="Proyecto">
+
+        </article>
+
+
+        <!-- VIDEO -->
+
+        <section>
+
+            <h2>
+                Video Relacionado con HTML5
+            </h2>
+
+            <video
+                controls
+                width="100%">
+
+                <source
+                    src="static/video/video_html.mp4"
+                    type="video/mp4">
+
+                Tu navegador no soporta la reproducción
+                de video.
+
+            </video>
+
+            <p class="mt-3">
+
+                Este video educativo fue incorporado utilizando
+                la etiqueta video de HTML5 para complementar
+                el contenido multimedia del sitio web.
+
+            </p>
+
+        </section>
+
+
+        <!-- CONTACTO -->
+
+        <section id="contacto">
+
+            <h2>
+                Contacto
+            </h2>
+
+            <form>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Nombre
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control">
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Correo Electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        class="form-control">
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Asunto
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control">
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Mensaje
+                    </label>
+
+                    <textarea
+                        class="form-control"
+                        rows="5"></textarea>
+
+                </div>
+
 
                 <button
                     type="submit"
-                    class="btn btn-success">
+                    class="btn btn-primary">
 
-                    Registrar Estudiante
-
-                </button>
-
-
-                <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#infoModal">
-
-                    Ver información
+                    Enviar Mensaje
 
                 </button>
 
             </form>
 
 
-            <!-- MENSAJE -->
-
-            <div
-                id="mensaje"
-                class="mt-3">
-            </div>
-
-
             <hr>
 
 
-            <!-- TABLA -->
+            <a
+                href="mailto:ja.arriagal@uea.edu.ec"
+                class="btn btn-success">
 
-            <h4>Lista de Estudiantes</h4>
+                Correo
 
-            <div class="table-responsive">
-
-                <table
-                    class="table table-striped table-hover table-bordered align-middle">
-
-                    <thead class="table-primary">
-
-                        <tr>
-
-                            <th>#</th>
-                            <th>Nombre</th>
-                            <th>Carrera</th>
-                            <th>Semestre</th>
-                            <th>Acciones</th>
-
-                        </tr>
-
-                    </thead>
-
-                    <tbody id="lista">
-
-                    </tbody>
-
-                </table>
-
-            </div>
+            </a>
 
 
-            <!-- SPINNER -->
+            <a
+                href="#"
+                class="btn btn-primary">
 
-            <div
-                id="spinner"
-                class="text-center mt-4"
-                style="display:none;">
+                Facebook
 
-                <div
-                    class="spinner-border text-primary"
-                    role="status">
+            </a>
 
-                    <span class="visually-hidden">
-                        Cargando...
-                    </span>
+
+            <a
+                href="#"
+                class="btn btn-danger">
+
+                Instagram
+
+            </a>
+
+        </section>
+
+
+        <!-- INFORMACIÓN ADICIONAL -->
+
+        <aside>
+
+            <h2>
+                Información Adicional
+            </h2>
+
+            <p>
+                Horario de atención:
+                Lunes a Viernes de 08:00 a 17:00.
+            </p>
+
+            <p>
+                Proyecto desarrollado con HTML5, CSS3
+                y Bootstrap para fines académicos.
+            </p>
+
+        </aside>
+
+
+    </main>
+
+
+    <!-- MODAL -->
+
+    <div
+        class="modal fade"
+        id="infoModal"
+        tabindex="-1">
+
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <div class="modal-header bg-primary text-white">
+
+                    <h5 class="modal-title">
+                        Información del Sistema
+                    </h5>
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                    </button>
 
                 </div>
 
-                <p class="mt-2">
-                    Registrando estudiante...
-                </p>
 
-            </div>
+                <div class="modal-body">
 
+                    <p>
 
-            <!-- CONTADOR -->
+                        Este sistema permite registrar estudiantes,
+                        consultar la información y administrar los
+                        registros utilizando Bootstrap 5 y JavaScript.
 
-            <h5 class="mt-4">
+                    </p>
 
-                Total de estudiantes:
-                <span id="contador">0</span>
+                </div>
 
-            </h5>
 
-        </div>
+                <div class="modal-footer">
 
-    </div>
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
 
-</section>
+                        Cerrar
 
+                    </button>
 
-<!-- IMAGEN DEL PROYECTO -->
-
-<article>
-
-    <h2>Imagen del Proyecto</h2>
-
-    <img
-        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
-        class="img-fluid"
-        alt="Proyecto">
-
-</article>
-
-
-<!-- VIDEO -->
-
-<section>
-
-    <h2>Video Relacionado con HTML5</h2>
-
-    <video
-        controls
-        width="100%">
-
-        <source
-            src="{{ url_for('static', filename='video/video_html.mp4') }}"
-            type="video/mp4">
-
-        Tu navegador no soporta la reproducción de video.
-
-    </video>
-
-    <p class="mt-3">
-
-        Este video educativo fue incorporado utilizando la etiqueta
-        video de HTML5 para complementar el contenido multimedia
-        del sitio web.
-
-    </p>
-
-</section>
-
-
-<!-- CONTACTO -->
-
-<section id="contacto">
-
-    <h2>Contacto</h2>
-
-    <form>
-
-        <div class="mb-3">
-
-            <label class="form-label">
-                Nombre
-            </label>
-
-            <input
-                type="text"
-                class="form-control">
-
-        </div>
-
-
-        <div class="mb-3">
-
-            <label class="form-label">
-                Correo Electrónico
-            </label>
-
-            <input
-                type="email"
-                class="form-control">
-
-        </div>
-
-
-        <div class="mb-3">
-
-            <label class="form-label">
-                Asunto
-            </label>
-
-            <input
-                type="text"
-                class="form-control">
-
-        </div>
-
-
-        <div class="mb-3">
-
-            <label class="form-label">
-                Mensaje
-            </label>
-
-            <textarea
-                class="form-control"
-                rows="5">
-            </textarea>
-
-        </div>
-
-
-        <button
-            type="submit"
-            class="btn btn-primary">
-
-            Enviar Mensaje
-
-        </button>
-
-    </form>
-
-
-    <hr>
-
-
-    <a
-        href="mailto:jordan@gmail.com"
-        class="btn btn-success">
-
-        Correo
-
-    </a>
-
-
-    <a
-        href="#"
-        class="btn btn-primary">
-
-        Facebook
-
-    </a>
-
-
-    <a
-        href="#"
-        class="btn btn-danger">
-
-        Instagram
-
-    </a>
-
-</section>
-
-
-<!-- INFORMACIÓN ADICIONAL -->
-
-<aside>
-
-    <h2>Información Adicional</h2>
-
-    <p>
-        Horario de atención:
-        Lunes a Viernes de 08:00 a 17:00.
-    </p>
-
-    <p>
-        Proyecto desarrollado con HTML5, CSS3 y Bootstrap
-        para fines académicos.
-    </p>
-
-</aside>
-
-
-<!-- MODAL -->
-
-<div
-    class="modal fade"
-    id="infoModal"
-    tabindex="-1">
-
-    <div class="modal-dialog">
-
-        <div class="modal-content">
-
-
-            <div class="modal-header bg-primary text-white">
-
-                <h5 class="modal-title">
-                    Información del Sistema
-                </h5>
-
-                <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal">
-                </button>
-
-            </div>
-
-
-            <div class="modal-body">
-
-                <p>
-                    Este sistema permite registrar estudiantes,
-                    consultar la información y administrar los
-                    registros utilizando Bootstrap 5 y JavaScript.
-                </p>
-
-            </div>
-
-
-            <div class="modal-footer">
-
-                <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-bs-dismiss="modal">
-
-                    Cerrar
-
-                </button>
+                </div>
 
             </div>
 
@@ -517,7 +749,30 @@
 
     </div>
 
-</div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Universidad Estatal Amazónica |
+            Desarrollo de Aplicaciones Web
+        </p>
+
+    </footer>
 
 
-{% endblock %}
+    <!-- Bootstrap JavaScript -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- JavaScript del proyecto -->
+
+    <script src="static/js/script.js"></script>
+
+</body>
+
+</html>
