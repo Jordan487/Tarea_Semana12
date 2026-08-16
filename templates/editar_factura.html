@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h1 class="text-center mb-4">
+        Editar Factura
+    </h1>
+
+    <div class="card shadow">
+
+        <div class="card-header bg-success text-white">
+            <h2 class="mb-0">
+                Modificar Factura
+            </h2>
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Cliente
+                    </label>
+
+                    <input
+                        type="text"
+                        name="cliente"
+                        class="form-control"
+                        value="{{ factura.cliente }}"
+                        required
+                    >
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Producto
+                    </label>
+
+                    <input
+                        type="text"
+                        name="producto"
+                        class="form-control"
+                        value="{{ factura.producto }}"
+                        required
+                    >
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Cantidad
+                    </label>
+
+                    <input
+                        type="number"
+                        name="cantidad"
+                        class="form-control"
+                        value="{{ factura.cantidad }}"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Total
+                    </label>
+
+                    <input
+                        type="number"
+                        name="total"
+                        class="form-control"
+                        value="{{ factura.total }}"
+                        step="0.01"
+                        required
+                    >
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-success"
+                >
+                    Guardar Cambios
+                </button>
+
+                <a
+                    href="/facturacion"
+                    class="btn btn-secondary"
+                >
+                    Cancelar
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

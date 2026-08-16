@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h1 class="text-center mb-4">
+        Editar Cliente
+    </h1>
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">
+                Editar Cliente
+            </h2>
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Nombre del Cliente
+                    </label>
+
+                    <input type="text"
+                           name="nombre"
+                           class="form-control"
+                           value="{{ cliente.nombre }}"
+                           required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Correo Electrónico
+                    </label>
+
+                    <input type="email"
+                           name="correo"
+                           class="form-control"
+                           value="{{ cliente.correo }}"
+                           required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Estado
+                    </label>
+
+                    <select name="estado"
+                            class="form-select"
+                            required>
+
+                        <option value="Activo"
+                            {% if cliente.estado == "Activo" %}
+                            selected
+                            {% endif %}>
+                            Activo
+                        </option>
+
+                        <option value="Inactivo"
+                            {% if cliente.estado == "Inactivo" %}
+                            selected
+                            {% endif %}>
+                            Inactivo
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <button type="submit"
+                        class="btn btn-primary">
+                    Guardar Cambios
+                </button>
+
+                <a href="/clientes"
+                   class="btn btn-secondary">
+                    Cancelar
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

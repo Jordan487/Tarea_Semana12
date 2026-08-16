@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h1 class="text-center mb-4">
+        Editar Producto
+    </h1>
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+
+            <h2 class="mb-0">
+                Editar Producto
+            </h2>
+
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Nombre del Producto
+                    </label>
+
+                    <input
+                        type="text"
+                        name="nombre"
+                        class="form-control"
+                        value="{{ producto.nombre }}"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Descripción
+                    </label>
+
+                    <input
+                        type="text"
+                        name="descripcion"
+                        class="form-control"
+                        value="{{ producto.descripcion }}"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Precio
+                    </label>
+
+                    <input
+                        type="number"
+                        name="precio"
+                        class="form-control"
+                        value="{{ producto.precio }}"
+                        step="0.01"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Guardar Cambios
+                </button>
+
+
+                <a
+                    href="/productos"
+                    class="btn btn-secondary"
+                >
+                    Cancelar
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h1 class="text-center mb-4">
+        Agregar Cliente
+    </h1>
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">
+                Nuevo Cliente
+            </h2>
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Nombre del Cliente
+                    </label>
+
+                    <input type="text"
+                           name="nombre"
+                           class="form-control"
+                           required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Correo Electrónico
+                    </label>
+
+                    <input type="email"
+                           name="correo"
+                           class="form-control"
+                           required>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Estado
+                    </label>
+
+                    <select name="estado"
+                            class="form-select"
+                            required>
+
+                        <option value="Activo">
+                            Activo
+                        </option>
+
+                        <option value="Inactivo">
+                            Inactivo
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <button type="submit"
+                        class="btn btn-primary">
+                    Guardar Cliente
+                </button>
+
+                <a href="/clientes"
+                   class="btn btn-secondary">
+                    Cancelar
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
