@@ -11,9 +11,11 @@
     <div class="card shadow">
 
         <div class="card-header bg-primary text-white">
+
             <h2 class="mb-0">
                 Editar Cliente
             </h2>
+
         </div>
 
         <div class="card-body">
@@ -26,13 +28,16 @@
                         Nombre del Cliente
                     </label>
 
-                    <input type="text"
-                           name="nombre"
-                           class="form-control"
-                           value="{{ cliente.nombre }}"
-                           required>
+                    <input
+                        type="text"
+                        name="nombre"
+                        class="form-control"
+                        value="{{ cliente.nombre }}"
+                        required
+                    >
 
                 </div>
+
 
                 <div class="mb-3">
 
@@ -40,13 +45,16 @@
                         Correo Electrónico
                     </label>
 
-                    <input type="email"
-                           name="correo"
-                           class="form-control"
-                           value="{{ cliente.correo }}"
-                           required>
+                    <input
+                        type="email"
+                        name="correo"
+                        class="form-control"
+                        value="{{ cliente.correo }}"
+                        required
+                    >
 
                 </div>
+
 
                 <div class="mb-3">
 
@@ -54,21 +62,27 @@
                         Estado
                     </label>
 
-                    <select name="estado"
-                            class="form-select"
-                            required>
+                    <select
+                        name="estado"
+                        class="form-select"
+                        required
+                    >
 
-                        <option value="Activo"
+                        <option
+                            value="Activo"
                             {% if cliente.estado == "Activo" %}
                             selected
-                            {% endif %}>
+                            {% endif %}
+                        >
                             Activo
                         </option>
 
-                        <option value="Inactivo"
+                        <option
+                            value="Inactivo"
                             {% if cliente.estado == "Inactivo" %}
                             selected
-                            {% endif %}>
+                            {% endif %}
+                        >
                             Inactivo
                         </option>
 
@@ -76,13 +90,19 @@
 
                 </div>
 
-                <button type="submit"
-                        class="btn btn-primary">
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
                     Guardar Cambios
                 </button>
 
-                <a href="/clientes"
-                   class="btn btn-secondary">
+
+                <a
+                    href="/clientes"
+                    class="btn btn-secondary"
+                >
                     Cancelar
                 </a>
 

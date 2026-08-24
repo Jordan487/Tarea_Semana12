@@ -15,20 +15,28 @@
         rel="stylesheet">
 
     <!-- CSS del proyecto -->
-    <link rel="stylesheet" href="static/css/style.css">
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
 
 </head>
 
 <body>
 
+    <!-- ========================= -->
     <!-- MENÚ PRINCIPAL -->
+    <!-- ========================= -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
         <div class="container">
 
-            <a class="navbar-brand" href="index.html">
+            <a
+                class="navbar-brand"
+                href="{{ url_for('inicio') }}">
+
                 Sistema Académico
+
             </a>
 
             <button
@@ -41,38 +49,84 @@
 
             </button>
 
-            <div class="collapse navbar-collapse" id="menu">
+            <div
+                class="collapse navbar-collapse"
+                id="menu">
 
                 <ul class="navbar-nav ms-auto">
 
+                    <!-- INICIO -->
+
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+
+                        <a
+                            class="nav-link"
+                            href="{{ url_for('inicio') }}">
+
                             Inicio
+
                         </a>
+
                     </li>
 
+
+                    <!-- PRODUCTOS -->
+
                     <li class="nav-item">
-                        <a class="nav-link" href="templates/productos.html">
+
+                        <a
+                            class="nav-link"
+                            href="{{ url_for('productos') }}">
+
                             Productos
+
                         </a>
+
                     </li>
 
+
+                    <!-- CLIENTES -->
+
                     <li class="nav-item">
-                        <a class="nav-link" href="templates/clientes.html">
+
+                        <a
+                            class="nav-link"
+                            href="{{ url_for('clientes') }}">
+
                             Clientes
+
                         </a>
+
                     </li>
 
+
+                    <!-- PROVEEDORES -->
+
                     <li class="nav-item">
-                        <a class="nav-link" href="templates/proveedores.html">
+
+                        <a
+                            class="nav-link"
+                            href="{{ url_for('proveedores') }}">
+
                             Proveedores
+
                         </a>
+
                     </li>
 
+
+                    <!-- FACTURACIÓN -->
+
                     <li class="nav-item">
-                        <a class="nav-link" href="templates/facturacion.html">
+
+                        <a
+                            class="nav-link"
+                            href="{{ url_for('facturacion') }}">
+
                             Facturación
+
                         </a>
+
                     </li>
 
                 </ul>
@@ -84,11 +138,15 @@
     </nav>
 
 
+    <!-- ========================= -->
     <!-- ENCABEZADO -->
+    <!-- ========================= -->
 
     <header>
 
-        <h1>Sistema de Gestión Académica</h1>
+        <h1>
+            Sistema de Gestión Académica
+        </h1>
 
         <h2>
             Proyecto creado para organizar procesos académicos
@@ -102,7 +160,9 @@
     </header>
 
 
-    <!-- BIENVENIDA -->
+    <!-- ========================= -->
+    <!-- MENSAJE DE BIENVENIDA -->
+    <!-- ========================= -->
 
     <div class="container mt-4">
 
@@ -126,32 +186,48 @@
     </div>
 
 
+    <!-- ========================= -->
     <!-- CONTENIDO PRINCIPAL -->
+    <!-- ========================= -->
 
     <main class="container-lg">
 
 
+        <!-- ========================= -->
         <!-- INICIO -->
+        <!-- ========================= -->
 
-        <section id="inicio" class="text-center">
+        <section
+            id="inicio"
+            class="text-center">
 
-            <h2>Inicio</h2>
+            <h2>
+                Inicio
+            </h2>
 
             <p>
+
                 Este sitio web fue desarrollado como práctica
                 académica utilizando HTML5, CSS3 y Bootstrap
                 para construir una página organizada, moderna
                 y funcional.
+
             </p>
 
-            <a href="#contacto" class="btn btn-success">
+            <a
+                href="#contacto"
+                class="btn btn-success">
+
                 Contáctanos
+
             </a>
 
         </section>
 
 
+        <!-- ========================= -->
         <!-- QUIÉNES SOMOS -->
+        <!-- ========================= -->
 
         <section id="quienes">
 
@@ -168,9 +244,12 @@
 
                 <div class="col-md-6">
 
-                    <h2>Quiénes Somos</h2>
+                    <h2>
+                        Quiénes Somos
+                    </h2>
 
                     <p>
+
                         Somos un proyecto enfocado en el desarrollo
                         de herramientas tecnológicas orientadas a
                         mejorar la gestión académica mediante
@@ -179,6 +258,7 @@
                         Este trabajo demuestra la aplicación práctica
                         de HTML5, CSS3 y Bootstrap utilizando
                         estructuras semánticas modernas.
+
                     </p>
 
                 </div>
@@ -188,15 +268,23 @@
         </section>
 
 
-        <!-- SERVICIOS -->
+        <!-- ========================= -->
+        <!-- SERVICIOS / MÓDULOS -->
+        <!-- ========================= -->
 
         <section id="servicios">
 
             <h2 class="text-center mb-4">
+
                 Servicios o Productos
+
             </h2>
 
+
             <div class="row">
+
+
+                <!-- PRODUCTOS -->
 
                 <div class="col-md-3 mb-3">
 
@@ -205,16 +293,20 @@
                         <div class="card-body text-center">
 
                             <h5 class="card-title">
+
                                 Productos
+
                             </h5>
 
                             <p class="card-text">
+
                                 Administración de productos
                                 registrados en el sistema.
+
                             </p>
 
                             <a
-                                href="templates/productos.html"
+                                href="{{ url_for('productos') }}"
                                 class="btn btn-primary">
 
                                 Ver Productos
@@ -228,6 +320,8 @@
                 </div>
 
 
+                <!-- CLIENTES -->
+
                 <div class="col-md-3 mb-3">
 
                     <div class="card shadow h-100">
@@ -235,16 +329,20 @@
                         <div class="card-body text-center">
 
                             <h5 class="card-title">
+
                                 Clientes
+
                             </h5>
 
                             <p class="card-text">
+
                                 Gestión y administración
                                 de clientes.
+
                             </p>
 
                             <a
-                                href="templates/clientes.html"
+                                href="{{ url_for('clientes') }}"
                                 class="btn btn-primary">
 
                                 Ver Clientes
@@ -258,6 +356,8 @@
                 </div>
 
 
+                <!-- PROVEEDORES -->
+
                 <div class="col-md-3 mb-3">
 
                     <div class="card shadow h-100">
@@ -265,16 +365,20 @@
                         <div class="card-body text-center">
 
                             <h5 class="card-title">
+
                                 Proveedores
+
                             </h5>
 
                             <p class="card-text">
+
                                 Administración de proveedores
                                 del sistema.
+
                             </p>
 
                             <a
-                                href="templates/proveedores.html"
+                                href="{{ url_for('proveedores') }}"
                                 class="btn btn-primary">
 
                                 Ver Proveedores
@@ -288,6 +392,8 @@
                 </div>
 
 
+                <!-- FACTURACIÓN -->
+
                 <div class="col-md-3 mb-3">
 
                     <div class="card shadow h-100">
@@ -295,16 +401,20 @@
                         <div class="card-body text-center">
 
                             <h5 class="card-title">
+
                                 Facturación
+
                             </h5>
 
                             <p class="card-text">
+
                                 Gestión de facturas y
                                 registros de facturación.
+
                             </p>
 
                             <a
-                                href="templates/facturacion.html"
+                                href="{{ url_for('facturacion') }}"
                                 class="btn btn-primary">
 
                                 Ver Facturación
@@ -322,9 +432,13 @@
         </section>
 
 
+        <!-- ========================= -->
         <!-- REGISTRO DE ESTUDIANTES -->
+        <!-- ========================= -->
 
-        <section id="registro" class="mt-5">
+        <section
+            id="registro"
+            class="mt-5">
 
             <div class="card shadow">
 
@@ -342,12 +456,15 @@
 
                         <div class="row">
 
+
                             <!-- NOMBRE -->
 
                             <div class="col-md-4 mb-3">
 
                                 <label class="form-label">
+
                                     Nombre
+
                                 </label>
 
                                 <input
@@ -369,7 +486,9 @@
                             <div class="col-md-4 mb-3">
 
                                 <label class="form-label">
+
                                     Carrera
+
                                 </label>
 
                                 <input
@@ -391,7 +510,9 @@
                             <div class="col-md-4 mb-3">
 
                                 <label class="form-label">
+
                                     Semestre
+
                                 </label>
 
                                 <input
@@ -410,6 +531,8 @@
                         </div>
 
 
+                        <!-- BOTÓN REGISTRAR -->
+
                         <button
                             type="submit"
                             class="btn btn-success">
@@ -418,6 +541,8 @@
 
                         </button>
 
+
+                        <!-- BOTÓN MODAL -->
 
                         <button
                             type="button"
@@ -431,6 +556,8 @@
 
                     </form>
 
+
+                    <!-- MENSAJE -->
 
                     <div
                         id="mensaje"
@@ -446,6 +573,8 @@
                     </h4>
 
 
+                    <!-- TABLA -->
+
                     <div class="table-responsive">
 
                         <table
@@ -456,9 +585,13 @@
                                 <tr>
 
                                     <th>#</th>
+
                                     <th>Nombre</th>
+
                                     <th>Carrera</th>
+
                                     <th>Semestre</th>
+
                                     <th>Acciones</th>
 
                                 </tr>
@@ -486,13 +619,17 @@
                             role="status">
 
                             <span class="visually-hidden">
+
                                 Cargando...
+
                             </span>
 
                         </div>
 
                         <p class="mt-2">
+
                             Registrando estudiante...
+
                         </p>
 
                     </div>
@@ -503,7 +640,10 @@
                     <h5 class="mt-4">
 
                         Total de estudiantes:
-                        <span id="contador">0</span>
+
+                        <span id="contador">
+                            0
+                        </span>
 
                     </h5>
 
@@ -514,7 +654,9 @@
         </section>
 
 
+        <!-- ========================= -->
         <!-- IMAGEN -->
+        <!-- ========================= -->
 
         <article>
 
@@ -530,7 +672,9 @@
         </article>
 
 
+        <!-- ========================= -->
         <!-- VIDEO -->
+        <!-- ========================= -->
 
         <section>
 
@@ -543,7 +687,7 @@
                 width="100%">
 
                 <source
-                    src="static/video/video_html.mp4"
+                    src="{{ url_for('static', filename='video/video_html.mp4') }}"
                     type="video/mp4">
 
                 Tu navegador no soporta la reproducción
@@ -562,7 +706,9 @@
         </section>
 
 
+        <!-- ========================= -->
         <!-- CONTACTO -->
+        <!-- ========================= -->
 
         <section id="contacto">
 
@@ -619,7 +765,8 @@
 
                     <textarea
                         class="form-control"
-                        rows="5"></textarea>
+                        rows="5">
+                    </textarea>
 
                 </div>
 
@@ -667,7 +814,9 @@
         </section>
 
 
+        <!-- ========================= -->
         <!-- INFORMACIÓN ADICIONAL -->
+        <!-- ========================= -->
 
         <aside>
 
@@ -676,22 +825,27 @@
             </h2>
 
             <p>
+
                 Horario de atención:
                 Lunes a Viernes de 08:00 a 17:00.
+
             </p>
 
             <p>
+
                 Proyecto desarrollado con HTML5, CSS3
                 y Bootstrap para fines académicos.
+
             </p>
 
         </aside>
 
-
     </main>
 
 
+    <!-- ========================= -->
     <!-- MODAL -->
+    <!-- ========================= -->
 
     <div
         class="modal fade"
@@ -702,10 +856,13 @@
 
             <div class="modal-content">
 
-                <div class="modal-header bg-primary text-white">
+                <div
+                    class="modal-header bg-primary text-white">
 
                     <h5 class="modal-title">
+
                         Información del Sistema
+
                     </h5>
 
                     <button
@@ -750,13 +907,17 @@
     </div>
 
 
+    <!-- ========================= -->
     <!-- FOOTER -->
+    <!-- ========================= -->
 
     <footer>
 
         <p>
+
             Universidad Estatal Amazónica |
             Desarrollo de Aplicaciones Web
+
         </p>
 
     </footer>
@@ -771,7 +932,9 @@
 
     <!-- JavaScript del proyecto -->
 
-    <script src="static/js/script.js"></script>
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}">
+    </script>
 
 </body>
 
