@@ -11,70 +11,78 @@
     <div class="card shadow">
 
         <div class="card-header bg-primary text-white">
+
             <h2 class="mb-0">
                 Nuevo Cliente
             </h2>
+
         </div>
 
         <div class="card-body">
 
             <form method="POST">
 
+                {{ form.hidden_tag() }}
+
+                <!-- NOMBRE -->
                 <div class="mb-3">
 
-                    <label class="form-label">
-                        Nombre del Cliente
-                    </label>
+                    {{ form.nombre.label(class="form-label") }}
 
-                    <input type="text"
-                           name="nombre"
-                           class="form-control"
-                           required>
+                    {{ form.nombre(class="form-control") }}
+
+                    {% for error in form.nombre.errors %}
+                        <div class="text-danger">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
 
                 </div>
 
+
+                <!-- CORREO -->
                 <div class="mb-3">
 
-                    <label class="form-label">
-                        Correo Electrónico
-                    </label>
+                    {{ form.correo.label(class="form-label") }}
 
-                    <input type="email"
-                           name="correo"
-                           class="form-control"
-                           required>
+                    {{ form.correo(
+                        class="form-control",
+                        type="email"
+                    ) }}
+
+                    {% for error in form.correo.errors %}
+                        <div class="text-danger">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
 
                 </div>
 
+
+                <!-- ESTADO -->
                 <div class="mb-3">
 
-                    <label class="form-label">
-                        Estado
-                    </label>
+                    {{ form.estado.label(class="form-label") }}
 
-                    <select name="estado"
-                            class="form-select"
-                            required>
+                    {{ form.estado(class="form-select") }}
 
-                        <option value="Activo">
-                            Activo
-                        </option>
-
-                        <option value="Inactivo">
-                            Inactivo
-                        </option>
-
-                    </select>
+                    {% for error in form.estado.errors %}
+                        <div class="text-danger">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
 
                 </div>
 
-                <button type="submit"
-                        class="btn btn-primary">
-                    Guardar Cliente
-                </button>
 
-                <a href="/clientes"
-                   class="btn btn-secondary">
+                <!-- BOTÓN -->
+                {{ form.submit(class="btn btn-primary") }}
+
+
+                <a
+                    href="{{ url_for('clientes') }}"
+                    class="btn btn-secondary"
+                >
                     Cancelar
                 </a>
 

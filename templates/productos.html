@@ -8,73 +8,107 @@ Productos - Sistema Académico
 
 <section class="mt-4">
 
+    <!-- Encabezado -->
     <div class="d-flex justify-content-between align-items-center mb-4">
 
         <h2>Productos</h2>
 
-        <a href="/agregar_producto" class="btn btn-primary">
+        <a href="{{ url_for('agregar_producto') }}" class="btn btn-primary">
             + Agregar producto
         </a>
 
     </div>
 
-    <div class="row">
 
-        {% for producto in productos %}
+    <!-- Tabla de productos -->
+    <div class="card shadow">
 
-        <div class="col-md-4 mb-4">
+        <div class="card-body">
 
-            <div class="card h-100 shadow">
+            <h5 class="card-title mb-3">
+                Lista de Productos
+            </h5>
 
-                <div class="card-body">
+            <div class="table-responsive">
 
-                    <h5 class="card-title">
-                        {{ producto.nombre }}
-                    </h5>
+                <table class="table table-bordered table-striped table-hover align-middle">
 
-                    <p class="card-text">
-                        {{ producto.descripcion }}
-                    </p>
+                    <thead class="table-primary">
 
-                    <p>
-                        <strong>Precio:</strong>
-                        ${{ "%.2f"|format(producto.precio) }}
-                    </p>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                            <th>Acciones</th>
+                        </tr>
 
-                    <div class="d-flex gap-2">
+                    </thead>
 
-                        <a
-                            href="/editar_producto/{{ producto.id }}"
-                            class="btn btn-warning btn-sm">
-                            Editar
-                        </a>
+                    <tbody>
 
-                        <a
-                            href="/eliminar_producto/{{ producto.id }}"
-                            class="btn btn-danger btn-sm"
-                            onclick="return confirm('¿Está seguro de eliminar este producto?');">
-                            Eliminar
-                        </a>
+                        {% for producto in productos %}
 
-                    </div>
+                        <tr>
 
-                </div>
+                            <td>
+                                {{ producto.id }}
+                            </td>
+
+                            <td>
+                                <strong>{{ producto.nombre }}</strong>
+                            </td>
+
+                            <td>
+                                {{ producto.descripcion }}
+                            </td>
+
+                            <td>
+                                ${{ "%.2f"|format(producto.precio) }}
+                            </td>
+
+                            <td>
+
+                                <a
+                                    href="{{ url_for('editar_producto', producto_id=producto.id) }}"
+                                    class="btn btn-warning btn-sm">
+                                    Editar
+                                </a>
+
+                                <a
+                                    href="{{ url_for('eliminar_producto', producto_id=producto.id) }}"
+                                    class="btn btn-danger btn-sm"
+                                    onclick="return confirm('¿Está seguro de eliminar este producto?');">
+                                    Eliminar
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                        {% else %}
+
+                        <tr>
+
+                            <td colspan="5" class="text-center">
+
+                                <div class="alert alert-info mb-0">
+                                    No existen productos registrados.
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
 
             </div>
 
         </div>
-
-        {% else %}
-
-        <div class="col-12">
-
-            <div class="alert alert-info text-center">
-                No existen productos registrados.
-            </div>
-
-        </div>
-
-        {% endfor %}
 
     </div>
 

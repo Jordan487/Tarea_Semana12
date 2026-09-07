@@ -22,102 +22,84 @@
 
             <form method="POST">
 
+                {{ form.hidden_tag() }}
+
+                <!-- NOMBRE -->
                 <div class="mb-3">
 
-                    <label class="form-label">
-                        Nombre del Proveedor
-                    </label>
+                    {{ form.nombre.label(class="form-label") }}
 
-                    <input
-                        type="text"
-                        name="nombre"
-                        class="form-control"
-                        value="{{ proveedor.nombre }}"
-                        required
-                    >
+                    {{ form.nombre(class="form-control") }}
+
+                    {% for error in form.nombre.errors %}
+                        <div class="text-danger">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
 
                 </div>
 
 
+                <!-- CORREO -->
                 <div class="mb-3">
 
-                    <label class="form-label">
-                        Correo
-                    </label>
+                    {{ form.correo.label(class="form-label") }}
 
-                    <input
+                    {{ form.correo(
+                        class="form-control",
                         type="email"
-                        name="correo"
-                        class="form-control"
-                        value="{{ proveedor.correo }}"
-                        required
-                    >
+                    ) }}
+
+                    {% for error in form.correo.errors %}
+                        <div class="text-danger">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
 
                 </div>
 
 
+                <!-- TELÉFONO -->
                 <div class="mb-3">
 
-                    <label class="form-label">
-                        Teléfono
-                    </label>
+                    {{ form.telefono.label(class="form-label") }}
 
-                    <input
-                        type="text"
-                        name="telefono"
-                        class="form-control"
-                        value="{{ proveedor.telefono }}"
-                        required
-                    >
+                    {{ form.telefono(class="form-control") }}
+
+                    {% for error in form.telefono.errors %}
+                        <div class="text-danger">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
 
                 </div>
 
 
+                <!-- ESTADO -->
                 <div class="mb-3">
 
-                    <label class="form-label">
-                        Estado
-                    </label>
+                    {{ form.estado.label(class="form-label") }}
 
-                    <select
-                        name="estado"
-                        class="form-select"
-                        required
-                    >
+                    {{ form.estado(class="form-select") }}
 
-                        <option
-                            value="Activo"
-                            {% if proveedor.estado == "Activo" %}
-                            selected
-                            {% endif %}
-                        >
-                            Activo
-                        </option>
-
-                        <option
-                            value="Inactivo"
-                            {% if proveedor.estado == "Inactivo" %}
-                            selected
-                            {% endif %}
-                        >
-                            Inactivo
-                        </option>
-
-                    </select>
+                    {% for error in form.estado.errors %}
+                        <div class="text-danger">
+                            {{ error }}
+                        </div>
+                    {% endfor %}
 
                 </div>
 
 
-                <button
-                    type="submit"
-                    class="btn btn-primary"
-                >
-                    Guardar Cambios
-                </button>
+                <!-- BOTÓN -->
+                {{ form.submit(
+                    class="btn btn-primary",
+                    value="Guardar Cambios"
+                ) }}
 
 
                 <a
-                    href="/proveedores"
+                    href="{{ url_for('proveedores') }}"
                     class="btn btn-secondary"
                 >
                     Cancelar
